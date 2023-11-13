@@ -3,82 +3,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Billard 14.1 Solo Counter</title>
+    <title>ScoreBoard Login</title>
   </head>
   <body>
-    <h1>Billard 14.1 Solo Counter</h1>
-    <label id="scoreLabel">Score: 0</label>
-    <br>
-    <button onclick="addRack()">Add Rack</button>
-    <button onclick="nextTry()">Next Try</button>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Points</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody id="scoreTableBody">
-      </tbody>
-    </table>
-    <br>
-    <label id="highScoreLabel">High Score: 0</label>
-
-    <script>
-      let score = 0;
-      let highScore = 0;
-
-      function addRack() {
-        score += 14;
-        updateScoreLabel();
-      }
-
-      function nextTry() {
-        const ballsRemaining = prompt("How many balls are remaining on the table?");
-        if (ballsRemaining !== null) {
-          const points = 15 - ballsRemaining;
-          score += points;
-          updateScoreLabel();
-          addScoreTableRow(points);
-          resetScore();
-          updateHighScoreLabel();
-        }
-      }
-
-      function updateScoreLabel() {
-        const scoreLabel = document.getElementById("scoreLabel");
-        scoreLabel.textContent = `Score: ${score}`;
-      }
-
-      function addScoreTableRow(points) {
-        const name = prompt("Enter your name:");
-        if (name !== null) {
-          const date = new Date().toLocaleDateString();
-          const scoreTableBody = document.getElementById("scoreTableBody");
-          const row = scoreTableBody.insertRow();
-          const nameCell = row.insertCell();
-          const pointsCell = row.insertCell();
-          const dateCell = row.insertCell();
-          nameCell.textContent = name;
-          pointsCell.textContent = points;
-          dateCell.textContent = date;
-        }
-      }
-
-      function resetScore() {
-        score = 0;
-        updateScoreLabel();
-      }
-
-      function updateHighScoreLabel() {
-        if (score > highScore) {
-          highScore = score;
-          const highScoreLabel = document.getElementById("highScoreLabel");
-          highScoreLabel.textContent = `High Score: ${highScore}`;
-        }
-      }
-    </script>
+    
+    Test
+    <p>Tesssst</p>
   </body>
 </html>
